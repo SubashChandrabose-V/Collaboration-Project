@@ -1,0 +1,31 @@
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<div>{{blogPost.blogTitle}}</div>
+<span><strong>Created By:</strong>{{blogPost.postedBy.username}}</span>
+<span><strong>on: </strong>{{blogPost.postedOn | date:'medium'}}</span>
+</div>
+
+<div class="panel-body">
+	{{blogPost.blogContent}}
+</div>
+
+</div>
+</div>
+
+</div>
+<b>Approval Form</b>
+
+<form>
+<div class="from-group">
+<input type="radio" ng-model="blogPost.approved" value="true" ng-click="showRejectionTxt(false)">Approve
+<input type="radio" ng-model="blogPost.approved" value="false" ng-click="showRejectionTxt(true)">Reject
+<p ng-show="isRejected">
+Enter Rejection Reason
+<textarea rows="5" cols="20" ng-model="blogPost.rejectionReason" class="form-control"></textarea>
+</p>
+</div>
+<input type="submit" value="update" ng-click="updateBlogPost()">
+
+</form>
