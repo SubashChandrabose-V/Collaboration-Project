@@ -5,6 +5,11 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import org.com.model.BlogComment;
+import org.com.model.BlogPost;
+import org.com.model.Friend;
+import org.com.model.Job;
+import org.com.model.ProfilePicture;
 import org.com.model.User;
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;
@@ -31,7 +36,7 @@ public class DBConfig {
 		hibernateProperties.setProperty("hibernate.hbm2ddl.auto","update");
 		hibernateProperties.setProperty("hibernate.show_sql", "true");
 		lsf.addProperties(hibernateProperties);
-		Class classes[]=new Class[] {User.class};
+		Class classes[]=new Class[] {User.class,BlogPost.class,Job.class,BlogComment.class,ProfilePicture.class,Friend.class};
 		return lsf.addAnnotatedClasses(classes).buildSessionFactory();
 	}
 	

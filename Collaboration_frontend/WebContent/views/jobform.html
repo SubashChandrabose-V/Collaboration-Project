@@ -1,0 +1,64 @@
+<div class="container">
+<span style="color:'red'">{{error}}</span>
+<form>
+
+<div class="form-group">
+<label>Enter the value for job title</label>
+<input type="text" ng-model="job.jobTitle" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Enter the value for job Description</label>
+<textarea ng-model="job.jobDescription" class="form-control"></textarea>
+</div>
+
+<div class="form-group">
+<label>Enter the value for skills Required</label>
+<input type="text" ng-model="job.skillsRequired" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Enter the value for salary</label>
+<input type="text" ng-model="job.salary" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Enter the value for location</label>
+<input type="text" ng-model="job.location" class="form-control">
+</div>
+
+<div class="form-group">
+<label>Enter the value for Company Name</label>
+<input type="text" ng-model="job.companyname" class="form-control">
+</div>
+
+<input type="submit" value="Post Job" ng-click="addJob()"> 
+</form>
+</div>
+
+
+
+<pre>
+List Of Jobs
+--------------
+</pre>
+<table class="table table-striped">
+
+<thead>
+<tr>
+<th>JobTitle</th>
+<th>PostedOn</th>
+<th>SkillsRequired</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="job in jobs">
+<td><a>{{job.jobTitle}}</a></td>
+<td>{{job.postedOn | date : 'medium'}}</td>
+<td>{{job.skillsRequired}}</td>
+
+</tr>
+
+</tbody>
+</table>
+
